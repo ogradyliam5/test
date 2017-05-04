@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Car Quiz</title>
+
+<link href="css/signup.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div id="wrap">
+			
+			<div class="navbar">
+				<img src="images/veyron.jpg" alt="Car" height = "140" width = "300">
+				</img>
+				
+				<img src="images/quiz.png" id="homelogo" alt="Quiz" height = "75" width = "250">
+				</img>
+			</div>
+
+			<div id="box">
+			<form action="quiz.html" method="post">
+			<div class="container">
+			
+				<h3> Enter your details to Begin! </h3>
+				<input id ="fname" size = "15" placeholder="First name*" required></input>
+				<input id ="sname" size = "15" placeholder="Last name*" required></input>
+				<input id = "email" placeholder="Email address*" required></input>
+				<br>
+				<input id = "pword" placeholder="Enter Password*" type="password" required></input>
+				<br>
+				
+				</div>
+				
+				<button type="submit" onclick="store()"><b>Continue</b></button>
+		</div>
+					 
+		<div class="container" style="background-color:#f1f1f1">
+			<button type="reset" class="cancelbtn">Cancel</button>
+		</div>
+		
+		</form>
+	</div><!--BOX-->
+</div><!--WRAP-->
+
+</body>
+
+<script>
+
+	var firstname = document.getElementById("fname");
+	var lastname = document.getElementById("sname");
+	var email = document.getElementById("email");
+	var password = document.getElementById("pword");
+	
+	function store()
+	{
+	localStorage.firstname = firstname.value;
+	localStorage.lastname = lastname.value;
+	localStorage.password = password.value;	
+	localStorage.email = email.value;	
+	}
+	
+	//0000000000000000000000000000000000000000
+	function validate(form) {
+    fail  = validateForename(form.forename.value);
+    fail += validateSurname(form.surname.value);
+    fail += validateUsername(form.username.value);
+    fail += validatePassword(form.password.value);
+    fail += validateAge(form.age.value);
+    fail += validateEmail(form.email.value);
+
+    if   (fail == "")
+        return true;
+    else { 
+        alert(fail);
+        return false;
+    }
+}
+	
+	
+
+//00000000000000000000000000000000000000000000000000
+</script>
+
+</html>
